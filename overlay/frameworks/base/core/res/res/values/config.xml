@@ -81,6 +81,11 @@
     <!-- The restoring is handled by modem if it is true -->
     <bool translatable="false" name="skip_restoring_network_selection">true</bool>
 
+    <!-- If device has a sensor that can wake-up the lock screen -->
+    <bool name="config_dozeWakeLockScreenSensorAvailable">true</bool>
+    <!-- If device supports pickup/lift gesture -->
+    <bool name="config_dozePulsePickup">true</bool>
+
     <!-- Set to true to add links to Cell Broadcast app from Settings and MMS app. -->
     <bool name="config_cellBroadcastAppLinks">true</bool>
 
@@ -206,14 +211,18 @@
          and the screen off animation has been performed. -->
     <bool name="config_dozeAfterScreenOffByDefault">true</bool>
 
-    <!-- Doze: should the TYPE_PICK_UP_GESTURE sensor be used as a pulse signal. -->
-    <bool name="config_dozePulsePickup">true</bool>
-
     <!-- Type of the double tap sensor. Empty if double tap is not supported. -->
     <string name="config_dozeDoubleTapSensorType" translatable="false">com.google.sensor.double_touch</string>
 
-    <!-- Whether the display blanks itself when transition from a doze to a non-doze state -->
-    <bool name="config_displayBlanksAfterDoze">true</bool>
+    <!-- Type of the long press sensor. Empty if long press is not supported. -->
+    <string name="config_dozeLongPressSensorType" translatable="false">com.google.sensor.long_press</string>
+
+    <!-- Whether the always on display mode is available. -->
+    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+
+    <!-- True if the display hardware only has brightness buckets rather than a full range of
+         backlight values -->
+    <bool name="config_displayBrightnessBucketsInDoze">true</bool>
 
     <!-- Specifies whether to decouple the auto-suspend state of the device from the display on/off state. -->
     <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
@@ -370,4 +379,11 @@
         <!-- ID0:Fingerprint:Strong -->
         <item>0:2:15</item>
     </string-array>
+
+    <!-- True if the firmware supports p2p MAC randomization -->
+    <bool name="config_wifi_p2p_mac_randomization_supported">true</bool>
+
+    <!-- Delay that allows some content to arrive at the display before switching
+         from DOZE to ON, in millis. -->
+    <integer name="config_wakeUpDelayDoze">32</integer>
 </resources>
